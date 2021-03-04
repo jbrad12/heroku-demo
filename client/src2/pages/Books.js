@@ -43,7 +43,7 @@ function Books() {
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
+    if (formObject.title) {
       API.saveBook({
         title: formObject.title,
         author: formObject.author,
@@ -59,7 +59,7 @@ function Books() {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>What do you have to do?</h1>
             </Jumbotron>
             <form>
               <Input
@@ -67,18 +67,18 @@ function Books() {
                 name="title"
                 placeholder="Title (required)"
               />
-              <Input
+              {/* <Input
                 onChange={handleInputChange}
                 name="author"
                 placeholder="Author (required)"
-              />
-              <TextArea
+              /> */}
+              {/* <TextArea
                 onChange={handleInputChange}
                 name="synopsis"
                 placeholder="Synopsis (Optional)"
-              />
+              /> */}
               <FormBtn
-                disabled={!(formObject.author && formObject.title)}
+                disabled={!( formObject.title)}
                 onClick={handleFormSubmit}
               >
                 Submit Book
